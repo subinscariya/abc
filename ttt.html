@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a" placeholder="Name">
+    <br>
+    <input type="text" id="c" placeholder="Phone">
+    <br>
+    <input type="text" id="d" placeholder="Email">
+    <br>
+    <button  onclick="ca()">SUBMIT</button>
+    
+
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD8lYNo5cZ8xCTDF3l67O8nvTBKqVihC9s",
+    authDomain: "firstsubin-272bb.firebaseapp.com",
+    databaseURL: "https://firstsubin-272bb.firebaseio.com",
+    projectId: "firstsubin-272bb",
+    storageBucket: "firstsubin-272bb.appspot.com",
+    messagingSenderId: "116752891425",
+    appId: "1:116752891425:web:0d20f98e0b273a5eebed60",
+    measurementId: "G-F857RC5C51"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  function ca(){
+      firebase.database().ref("user").push({
+          Name : document.getElementById("a").value,
+          Phone : document.getElementById("c").value,
+          Email : document.getElementById("d").value
+      });
+  }
+</script>
+
+
+</body>
+</html>
